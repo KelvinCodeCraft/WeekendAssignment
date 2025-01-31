@@ -115,7 +115,7 @@ async function loadProducts() {
               <td>${product.name}</td>
               <td>$${product.price.toFixed(2)}</td>
               <td>
-                <button onclick="handleEditProduct('${product.id}')" class="nav-btn">Edit</button>
+                <button onclick="handleEditProduct('${product.id}')" class="nav-btn" [data-cy="contact-edit"]>Edit</button>
                 <button onclick="handleDeleteProduct('${product.id}')" class="nav-btn">Delete</button>
               </td>
             </tr>
