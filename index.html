@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="nav-brand">Elegant Shop</div>
+            <div class="nav-items">
+                <div id="userInfo" style="display: none;">
+                    Welcome, <span id="userEmail"></span>
+                </div>
+                <div id="adminControls" style="display: none;">
+                    <button id="adminPanelBtn" class="nav-btn">Admin Panel</button>
+                </div>
+                <button id="cartBtn" class="nav-btn" style="display: none;">
+                    <span id="cartCount">Cart (0)</span>
+                </button>
+                <a href="login.html" id="loginBtn" class="nav-btn">Login</a>
+                <a href="register.html" id="registerBtn" class="nav-btn">Register</a>
+                <button id="logoutBtn" class="nav-btn" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="messageContainer" class="message-container"></div>
+        
+        <div id="productsSection">
+            <div class="products-grid" id="productsContainer"></div>
+        </div>
+
+        <div id="adminSection" style="display: none;">
+            <div class="admin-container">
+                <h2>Product Management</h2>
+                <form id="productForm" class="product-form">
+                    <input type="hidden" id="productId">
+                    <input type="text" id="productName" placeholder="Product Name" required>
+                    <input type="number" id="productPrice" step="0.01" placeholder="Price" required>
+                    <input type="url" id="productImage" placeholder="Image URL" required>
+                    <textarea id="productDescription" placeholder="Product Description" required></textarea>
+                    <button type="submit" id="submitProduct">Add Product</button>
+                    <button type="button" id="cancelEdit" style="display: none;">Cancel Edit</button>
+                </form>
+                <div class="products-table">
+                    <table id="adminProductsTable">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-footer">
+                <div id="cartTotal">Total: $0.00</div>
+                <button id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
